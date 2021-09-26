@@ -1,0 +1,54 @@
+﻿@page
+@model Final_Project_in_Asp.net_MVC_2021.Pages.WebDesignModel
+@{
+}
+
+<section>
+    <div id="menuBars" class="fas fa-bars"></div>
+    <a asp-page="/Index"><img id="myLogo" src="~/Images/myLogo3.jpg" alt="No Image" /></a>
+    <p class="myLogoName">WEB DESIGN</p>
+
+    <div class="myWebDesign">
+        <div class="webDesign1">
+            <div class="web_design1"></div>
+            <div class="web_design2"></div>
+            <div class="web_design3"></div>
+        </div>
+        <div class="webDesign2">
+            <div class="web_design4"></div>
+            <div class="web_design5"></div>
+            <div class="web_design6"></div>
+        </div>
+        <div class="webDesign3">
+            <div class="web_design7"></div>
+            <div class="web_design8"></div>
+            <div class="web_design9"></div>
+        </div>
+    </div>
+
+    <div class="comment_design">
+        <h3>Write your comment:</h3>
+
+        <div class="my_form">
+            <form action="" method="post">
+                <p>
+                    <textarea asp-for="comment.UserComment" type="message" placeholder="Your Message ... ... ..."></textarea>
+                </p>
+                <p><input class="myButton" type="submit" value="SEND" /></p>
+                <div class="result">
+                    <p>The result: @Model.myResult</p>
+                </div>
+            </form>
+            
+        </div>     
+    </div>
+
+
+    <div class="walkingLetter">
+        <a asp-page="/SignUp">
+            <div class="walking_letter">
+                <img src="~/Images/logOut.jpg" alt="No Imges" />
+            </div>
+        </a>
+    </div>
+</section>

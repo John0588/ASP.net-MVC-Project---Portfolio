@@ -1,0 +1,1995 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Great+Vibes&family=Indie+Flower&family=Patrick+Hand&family=Satisfy&family=Shadows+Into+Light&display=swap');
+
+:root {
+    /*Font Colors*/
+    --one: black;
+    --two: white;
+    --three: yellow;
+    --four: red;
+    --five: blue;
+    --six: gray;
+    --seven: #00A99D;
+    --eigth: #9354ac;
+    --nine: #55a889;
+    --ten: #a6ecee;
+    --eleven: orange;
+    --twelve: #d5cfcf;
+    --thirteen: #cfd5d5;
+    --fourteen: #f6f2f2;
+    --fifteen: #685c5c;
+    --sixteen: #cc3cc0;
+    --seventeen: green;
+    --eigtheen: #523838
+
+    /*Font Style*/
+    --f1: 'Patrick Hand';
+    --f2: 'Shadows into light';
+    --f3: 'Indie flower';
+    --f4: 'Satisfy';
+    --f5: 'Rampart one';
+    --f6: 'Courgette';
+    --f7: 'Great vibes';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    font-weight: normal;
+    transition: all .2s linear;
+}
+
+*::selection {
+    background: var(--nine);
+    color: var(--ten);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 1.4rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--thirteen);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--seven);
+}
+
+body {
+    overflow-x: hidden;
+    padding-left: 35rem;
+}
+
+/*For all the pages*/
+section {
+    min-height: 90vh;
+    padding: 3rem;
+}
+
+#myLogo {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    margin-top: 4rem;
+    text-decoration: none;
+}
+
+.myLogoName {
+    margin-top: -9rem;
+    margin-left: 15rem;
+    font-size: 4rem;
+    color: var(--seven);
+    font-family: var(--f6);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*Header Section*/
+header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 40rem;
+    height: 100%;
+    backdrop-filter: blur(.4rem);
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--thirteen);
+}
+
+.myProfile .myImage {
+    padding: 2rem;
+    height: 35rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.myProfile .myName {
+    font-size: 3rem;
+    color: var(--one);
+    font-weight: bold;
+    font-family: Rockwell;
+}
+
+.myProfile .myTittle {
+    font-size: 2rem;
+    color: var(--two);
+    font-weight: bold;
+    font-family: 'Bradley Hand ITC';
+}
+
+.myMenu {
+    width: 100%;
+}
+
+.myMenu ul {
+    width: 100%;
+    list-style: none;
+    padding: 1rem 3rem;
+}
+
+.myMenu ul li a {
+    display: block;
+    padding: 1rem;
+    margin: 2rem 0;
+    font-size: 2rem;
+    border-radius: 5rem;
+    border: .1rem solid var(--one);
+    color: #fff;
+    background: var(--seven);
+    color: var(--two);
+    font-family: var(--f2);
+    font-weight: bold;
+}
+
+.myMenu ul li a:hover {
+    background: var(--three);
+    border: .1rem solid var(--one);
+    color: var(--two);
+}
+
+#menuBars {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: var(--two);
+    color: var(--seven);
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    display: none;
+}
+
+/*Home Section*/
+.myHome h1 {
+    margin: 15rem 0 -10rem 0;
+    text-align: center;
+    font-size: 20px;
+    font-family: var(--f6);
+    font-weight: bold;
+}
+.myInfo {
+    margin-top: 12rem;
+    padding: 2rem;
+}
+
+.myInfo h3 {
+    font-size: 4rem;
+    color: var(--one);
+    font-family: var(--f1);
+}
+
+.myInfo p {
+    font-size: 1.5rem;
+    color: var(--one);
+    padding: 2rem 0;
+    font-family: var(--f2);
+}
+
+.myInfo .myButton {
+    width: 15rem;
+    padding: 5px;
+    border-radius: 5rem;
+    color: var(--one);
+    background: var(--seven);
+    cursor: pointer;
+    margin-left: 5rem;
+    margin-top: 3rem;
+    border: .1rem solid var(--one);
+    font-family: var(--f1);
+    font-weight: bold;
+    text-align: center;
+}
+
+.myInfo .myButton:hover {
+    background: var(--three);
+    color: var(--nine);
+}
+
+/*My Social Icon*/
+.myIcon {
+    display: grid;
+    place-items: center;
+    margin-top: 15rem;
+}
+
+.button {
+    float: left;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 10px #00A99D;
+    margin-left: 2rem;
+    background: var(--ten);
+}
+
+.button span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+}
+
+.button:hover {
+    width: 200px;
+}
+
+.button:nth-child(1):hover .my_icon {
+    background: #e1306c;
+}
+
+.button:nth-child(2):hover .my_icon {
+    background: #4267b2;
+}
+
+.button:nth-child(3):hover .my_icon {
+    background: #1da1f2;
+}
+
+.button:nth-child(4):hover .my_icon {
+    background: #0e76a8;
+}
+
+.button:nth-child(5):hover .my_icon {
+    background: #ff0000;
+}
+
+.button:nth-child(6):hover .my_icon {
+    background: #333;
+}
+
+.button:nth-child(1) span {
+    color: #e1306c;
+}
+
+.button:nth-child(2) span {
+    color: #4267b2;
+}
+
+.button:nth-child(3) span {
+    color: #1da1f2;
+}
+
+.button:nth-child(4) span {
+    color: #0e76a8;
+}
+
+.button:nth-child(5) span {
+    color: #ff0000;
+}
+
+.button:nth-child(6) span {
+    color: #333;
+}
+
+.button .my_icon {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out; 
+}
+
+.button .my_icon i {
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-in-out;
+    color: var(--one);
+}
+.button:hover i {
+    color: #fff;
+}
+
+/*About Section*/
+/*1*/
+.myAbout1 {
+    margin-top: 8rem;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2fr 2fr;
+}
+.About1_left,
+.About1_right {
+    padding: 2%;
+    border-radius: 10px
+}
+.About1_left {
+    margin-top: 10rem;
+}
+.About1_left h3 {
+    margin-bottom: 2rem;
+    font-size: 30px;
+    font-family: var(--f5)
+}
+.About1_left myButton {
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-family: var(--f5)
+}
+.About1_left .myButton {
+    margin-top: 3rem;
+    margin-left: 4rem;
+    width: 13rem;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 50px;
+    border: .1rem solid var(--one);
+    background: var(--seven);
+    text-align: center;
+    cursor: pointer;
+}
+.About1_left .myButton:hover {
+    background: var(--three);
+}
+.About1Left {
+    display: grid;
+    margin-top: 6rem;
+    grid-template-columns: 2fr 2fr;
+    font-size: 12px;
+}
+.about1A {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    border: .1rem solid var(--one);
+    background: var(--nine);
+    width: 37rem;
+    height: 36rem;
+    padding: 1rem;
+}
+.about1B {
+    border: .2rem solid var(--one);
+    box-shadow: 0 20px 20px rgba(1, 1, 1, .5);
+    height: 34rem;
+    padding: .5rem;
+    border-radius: 30px;
+}
+.my_image .myImage {
+    height: 31rem;
+    border-radius: 50%;
+    text-decoration: none;
+    border: .1rem solid var(--one);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .4);
+}
+
+/*Button Section*/
+.walkingLetter {
+    margin: 5rem 0 0 0;
+}
+.walkingExper {
+    margin: 28rem 0 0 0;
+}
+.walking_letter img {
+    background: var(--seven);
+    border-radius: 50px;
+    padding: 12px;
+    color: var(--one);
+    text-align: center;
+    width: 75px;
+    animation: forward 20s linear infinite;
+    vertical-align: middle;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .2);
+}
+@keyframes walk {
+    0% {
+        background-position: 0px
+    }
+
+        100% {
+        background-position: 3000px
+    }
+}
+@keyframes forward {
+    0% {
+        transform: translateX(-200px)
+    }
+
+    100% {
+        transform: translateX(1000px)
+    }
+}
+
+/*About Section*/
+/*2*/
+#about2 h1, #about3 h1 {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: var(--six);
+    font-family: var(--f2);
+    font-weight: bold;
+}
+
+.aboutDiv1, .aboutDiv2, .aboutDiv3 {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;  
+}
+
+.aboutDiv1 .div1,
+.aboutDiv1 .div2,
+.aboutDiv1 .div3 {
+    border: .1rem solid var(--one);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .2);
+    width: 20rem;
+    height: 20rem;
+    margin-top: 4rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.aboutDiv2 .div1,
+.aboutDiv2 .div2,
+.aboutDiv2 .div3 {
+    border: .1rem solid var(--one);
+    width: 20rem;
+    height: 20rem;
+    margin-top: 4rem;
+}
+
+.aboutDiv3 .div1,
+.aboutDiv3 .div2,
+.aboutDiv3 .div3 {
+    border: .1rem solid var(--one);
+    width: 20rem;
+    height: 20rem;
+    margin-top: 4rem;
+}
+.div1 .tittle {
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-weight: 900;
+    font-family: var(--f6);
+    font-size: 15px;
+    padding: 10px;
+}
+.div1 .comment {
+    margin: 15rem 0 0 0;
+    text-align: center;
+    font-weight: 900;
+    font-family: var(--f6);
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+.experience1 {
+    width: 100%;
+    margin: 8rem 0 0 0;
+    text-align: center;
+    border: .1rem solid var(--one);
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    border: 30px;
+}
+.experience_1 {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+.exper_ience p {
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    font-size: 22px;
+}
+.job p {
+    text-align: left;
+    font-weight: 900;
+    font-family: var(--f6);
+    font-size: 15px;
+}
+.job ul {
+    text-align: left;
+    padding: 0 0 0 8rem;
+    font-size: 13px;
+}
+/*About Section*/
+/*3*/
+.my_skills1 {
+    margin-top: 5rem;
+    width: 75rem;
+    border: .1rem solid var(--one);
+    height: 1rem;
+    background: var(--eleven);
+}
+.my_skills2 {
+    margin-top: 10rem;
+    width: 70rem;
+    border: .1rem solid var(--one);
+    height: 1rem;
+    background: var(--eleven);
+}
+.my_skills3 {
+    margin-top: 10rem;
+    width: 60rem;
+    border: .1rem solid var(--one);
+    height: 1rem;
+    background: var(--eleven);
+}
+.my_skills4 {
+    margin-top: 10rem;
+    width: 50rem;
+    border: .1rem solid var(--one);
+    height: 1rem;
+    background: var(--eleven);
+}
+.mySkills1 {
+    background: var(--one);
+    width: 80rem;
+    border: .1rem solid var(--one);
+    margin-top: -2.2rem;
+}
+.mySkills2 {
+    background: var(--one);
+    width: 80rem;
+    border: .1rem solid var(--one);
+    margin-top: -2.2rem;
+}
+.mySkills3 {
+    background: var(--one);
+    width: 80rem;
+    border: .1rem solid var(--one);
+    margin-top: -2.2rem;
+}
+.mySkills4 {
+    background: var(--one);
+    width: 80rem;
+    border: .1rem solid var(--one);
+    margin-top: -2.2rem;
+}
+.my_skills1 p, 
+.my_skills2 p, 
+.my_skills3 p, 
+.my_skills4 p {
+    margin-left: 85rem;
+}
+.my_skills1 h5,
+.my_skills2 h5,
+.my_skills3 h5,
+.my_skills4 h5  {
+    margin-top: 1rem;
+}
+.my_skills5 {
+    margin-top: 20rem;
+}
+.my_skills5 p {
+    font-size: 15px;
+}
+.my_skills5 .myButton {
+    margin-top: 3rem;
+    margin-left: 4rem;
+    width: 13rem;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 50px;
+    border: .1rem solid var(--one);
+    background: var(--seven);
+    text-align: center;
+    cursor: pointer;
+}
+
+/*Service Section*/
+.myServices {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+.myServices1,
+.myServices2,
+.myServices3 {
+    width: 30rem;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+}
+.myServices1:hover,
+.myServices2:hover,
+.myServices3:hover {
+    background: var(--two);
+}
+.myServices1 .tittle, 
+.myServices2 .tittle, 
+.myServices3 .tittle {
+    font-family: var(--f2);
+    font-size: 18px;
+    color: var(--one);
+    font-weight: bold;
+}
+.my_services1,
+.my_services2,
+.my_services3 {
+    height: 20rem;
+    border: .2rem .0rem solid var(--one);
+    box-shadow: 0 20px 20px rgb(0 0 0 / 20%);
+}
+.myServices1 .my_services1 img {
+    width: 15rem;
+    height: 18rem;
+    margin: 10px 0 0 0;
+    border-radius: 40px;
+}
+.myServices2 .my_services2 img {
+    width: 15rem;
+    height: 18rem;
+    margin: 10px 0 0 0;
+    border-radius: 40px;
+}
+.myServices3 .my_services3 img {
+    width: 15rem;
+    height: 18rem;
+    margin: 10px 0 0 0;
+    border-radius: 40px;
+}
+.my_services1:hover,
+.my_services2:hover,
+.my_services3:hover {
+    border: .1rem solid var(--one);
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    background: var(--two);
+    border-radius: 40px;
+}
+.myServices1 p:hover, 
+.myServices2 p:hover, 
+.myServices3 p:hover {
+    color: var(--three);
+}
+.myServices1 p, 
+.myServices2 p, 
+.myServices3 p {
+text-align: center;
+font-size: 10px;
+padding: 15px;
+font-family: var(--f3);
+color: var(--one);
+}
+/*Web Design Section*/
+.myWebDesign {
+    width: 100%;
+    margin: 8rem 0 0 0;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+}
+
+.webDesign1 {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.webDesign2 {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.webDesign3 {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.webDesign1 .web_design1 {
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 20rem;
+    height: 20rem;
+    background: var(--three);
+}
+
+.webDesign1 .web_design2 {
+    margin: 8rem 0 0 0;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 20rem;
+    height: 20rem;
+    background: var(--fifteen);
+}
+
+.webDesign1 .web_design3 {
+    margin: 3rem 0 0 0;
+    width: 30rem;
+    height: 20rem;
+    background: var(--sixteen);
+}
+
+.webDesign2 .web_design4 {
+    margin: -3rem 0 0 0;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 15rem;
+    height: 20rem;
+    background: var(--seven);
+}
+
+.webDesign2 .web_design5 {
+    margin: 3rem 0 0 -6rem;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 20rem;
+    height: 20rem;
+    background: var(--one);
+}
+
+.webDesign2 .web_design6 {
+    margin: -2rem 0 0 -3rem;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 25rem;
+    height: 20rem;
+}
+
+.webDesign3 .web_design7 {
+    margin: 0 4rem 0 0;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 25rem;
+    height: 20rem;
+    background: var(--twelve);
+}
+
+.webDesign3 .web_design8 {
+    margin: 2rem 0 0 3rem;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 20rem;
+    height: 20rem;
+    background: var(--four);
+}
+
+.webDesign3 .web_design9 {
+    margin: -2rem 0 0 -3rem;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 25rem;
+    height: 20rem;
+    background: var(--five);
+}
+
+.comment_design {
+    margin: 5rem 0 0 0;
+    width: 70%;
+}
+
+.comment_design h3 {
+    font-family: var(--f6);
+    font-weight: 900;
+    font-size: 15px;
+    padding: 20px;
+}
+
+.my_form textarea {
+    margin: 20px;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    border: .2rem .0rem solid var(--one);
+    margin: 20px;
+    height: 50%;
+    background: var(--seven);
+    color: var(--one);
+    width: 70%;
+}
+
+.my_form .myButton {
+    width: 10rem;
+    padding: 5px;
+    border-radius: 5rem;
+    color: var(--one);
+    background: var(--seven);
+    cursor: pointer;
+    font-size: 10px;
+    border: .1rem solid var(--one);
+    font-family: var(--f1);
+    font-weight: bold;
+    text-align: center;
+}
+/*Responsive Design Section*/
+.myResponsive {
+    margin-top: 8rem;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+}
+.myResponsive ul {
+padding: 50px 0;
+}
+.myResponsive ul li {
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: var(--seven);
+}
+.myResponsive ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
+}
+.myResponsive ul li .my_responsive {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 10px;
+    background: var(--two);
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+}
+.myResponsive ul li div::before {
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+.myResponsive ul li:nth-child(odd) .my_responsive {
+    left: -439px;
+    height: 15rem;
+}
+.myResponsive ul li:nth-child(even) .my_responsive {
+    left: 45px;
+    height: 15rem;
+}
+.my_responsive p {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+/*My Graphic Design Section*/
+.myGraphicDesign {
+    width: 100%;
+    margin: 8rem 0 0 0;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+}
+
+.graphicDesign1 {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.graphicDesign2 {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.graphicDesign3 {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.graphicDesign1 .graphic_design1 {
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 20rem;
+    height: 20rem;
+    background: var(--nine);
+    border-radius: 100px;
+}
+
+.graphicDesign1 .graphic_design2 {
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 30rem;
+    height: 15rem;
+    background: var(--four);
+    border-radius: 100px;
+}
+
+.graphicDesign1 .graphic_design3 {
+    margin:  8rem 0 0 0;
+    height: 20rem;
+    width: 45rem;
+    border-radius: 50%;
+    background: var(--fourteen);
+}
+
+.graphicDesign2 .graphic_design4 {
+    margin: -3rem 0 0 0;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 20rem;
+    height: 20rem;
+    background: var(--one);
+}
+
+.graphicDesign2 .graphic_design5 {
+    margin: 3rem 0 0 -6rem;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 20rem;
+    height: 15rem;;
+    transform: skew(20deg);
+    background: var(--fifteen);
+}
+
+.graphicDesign2 .graphic_design6 {
+    margin: -2rem 0 0 -3rem;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 25rem;
+    height: 20rem;
+    border-radius: 20px;
+    background: var(--three);
+}
+
+.graphicDesign3 .graphic_design7 {
+    margin: 0 4rem 0 0;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 25rem;
+    height: 20rem;
+    background: var(--twelve);
+}
+
+.graphicDesign3 .graphic_design8 {
+    margin: 2rem 0 0 3rem;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 20rem;
+    height: 20rem;
+    background: var(--four);
+}
+
+.graphicDesign3 .graphic_design9 {
+    margin: -2rem 0 0 -3rem;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    width: 25rem;
+    height: 20rem;
+    background: var(--five);
+}
+
+.comment_design {
+margin: 5rem 0 0 0;
+width: 70%;
+}
+
+.comment_design h3 {
+    font-family: var(--f6);
+    font-weight: 900;
+    font-size: 15px;
+    padding: 20px;
+}
+
+.my_form textarea {
+    margin: 20px;
+    box-shadow: 0 20px 20px rgb(0 0 0 / 40%);
+    border: .2rem .0rem solid var(--one);
+    margin: 20px;
+    height: 50%;
+    background: var(--seven);
+    color: var(--one);
+    width: 70%;
+}
+
+.my_form .myButton {
+    width: 10rem;
+    padding: 5px;
+    border-radius: 5rem;
+    color: var(--one);
+    background: var(--seven);
+    cursor: pointer;
+    font-size: 10px;
+    border: .1rem solid var(--one);
+    font-family: var(--f1);
+    font-weight: bold;
+    text-align: center;
+}
+/*Resume Section*/
+.my_resume {
+    padding: 15px;
+    margin: 8rem 0 0 0;
+    width: 100%;
+    border: .1rem solid var(--six);
+}
+.resumeName h1 {
+    text-align: center;
+    font-size: 25px;
+    font-family: var(--f1);
+    font-weight: 900;
+    color: var(--siz);
+}
+.resumeName p {
+    text-align: center;
+    font-size: 11px;
+    font-family: var(--f5);
+    font-weight: 900;
+    color: var(--six);
+}
+.resumeBody {
+    padding: 0 0 0 25px;
+}
+.resume_body h1 {
+    padding: 5px;
+    font-size: 18px;
+    font-family: var(--f5);
+    font-weight: 900;
+    color: var(--seven);
+}
+.resume_body p {
+    margin: 0 0 0 20px;
+    padding: 5px;
+    font-size: 10px;
+}
+.resume_body ul li {
+    margin: 0 0 0 10rem;
+    font-size: 11px;
+}
+.myExperience {
+    padding: 0 0 0 25px;
+}
+.myExperience h1 {
+    padding: 5px;
+    font-size: 18px;
+    font-family: var(--f5);
+    font-weight: 900;
+    color: var(--seven);
+}
+.experienceBody .experience {
+    margin: 0 0 10px 20px;
+}
+.experience p {
+    margin: 0 0 0 0;
+    font-size: 11px;
+}
+.myEducation {
+    padding: 0 0 0 25px;
+}
+.my_education h1 {
+    padding: 5px;
+    font-size: 18px;
+    font-family: var(--f5);
+    font-weight: 900;
+    color: var(--seven);
+}
+.education {
+    padding: 0 0 10px 0;
+}
+.education p {
+    margin: 0 0 0 20px;
+    font-size: 11px;
+}
+.myCertification {
+    padding: 0 0 0 25px;
+}
+
+.my_certification h1 {
+    padding: 5px;
+    font-size: 18px;
+    font-family: var(--f5);
+    font-weight: 900;
+    color: var(--seven);
+}
+
+.certification {
+    padding: 0 0 10px 0;
+}
+
+.certification p {
+    margin: 0 0 0 20px;
+    font-size: 11px;
+}
+
+/*Contact Section*/
+.myContact {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.c_left {
+    width: 50rem;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: .1rem solid var(--one);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .4);
+}
+
+.c_form input {
+    border: .2rem solid var(--one);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .4);
+    width: 40rem;
+    height: 4rem;
+    padding: 10px;
+    border-radius: 10px;
+}
+.c_form input:hover {
+    background: var(--three);
+    color: var(--one);
+}
+.c_form textarea {
+    border: .2rem solid var(--one);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .4);
+    width: 40rem;
+    height: 32rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+.c_form textarea:hover {
+    background: var(--three);
+    color: var(--one);
+}
+.c_left .myButton {
+    margin-top: 2rem;
+    margin-left: -25rem;
+    width: 15rem;
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 50px;
+    border: .2rem solid var(--one);
+    background: var(--two);
+}
+.c_left .myButton:hover {
+    background: var(--three);
+    color: var(--one);
+}
+.cRight p {
+    margin-top: 2rem;
+    margin-left: 10rem;
+    width: 40rem;
+    margin-top: 20px auto;
+}
+.c_right h1 {
+    margin-top: 5rem;
+    font-family: var(--f4);
+    font-size: 25px;
+    font-weight: 900;
+    margin-left: 10rem;
+}
+
+.c_right .wrapper {
+    margin-top: 10rem;
+    margin-left: 10rem;
+}
+.cRight p {
+    margin-top: 30px;
+}
+.contact_place,
+.contact_phone,
+.contact_email {
+    color: var(--seven);
+    font-size: 15px;
+    margin-left: 1rem;
+}
+.cRight2{
+    text-align: center;
+}
+.cRight2 hr {
+    margin-top: 30rem;
+}
+.cRight2 p {
+    font-size: 15px;
+    font-family: var(--f4);
+}
+
+/*SignIn Section*/
+.my_signIn {
+    padding-top: 2rem;
+    width: 70rem;
+    height: 50vh;
+    margin: 90px 150px;
+    padding-left: 10rem;
+    text-align: center;
+    border-radius: 0 55px 0 55px;
+    border: .1rem .0rem solid var(--one);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .2);
+}
+.mySignIn {
+    padding: 20px;
+    width: 50rem;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .2);
+    border: .1rem .0rem solid var(--one);
+    text-align: center;
+    border-radius: 0 0 0 0;
+}
+.mySignIn .myAvatar {
+    margin-top: -8rem;
+    vertical-align: middle;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .2);
+}
+.mySignIn input {
+    margin-top: 2rem;
+    border: .1rem solid var(--one);
+    width: 40rem;
+    height: 4rem;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .4);
+}
+.mySignIn input:hover {
+    background: var(--three);
+    color: var(--one);
+}
+.mySignIn textarea {
+    border: .1rem solid var(--one);
+    width: 40rem;
+    height: 25rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+.mySignIn textarea:hover {
+    background: var(--three);
+    color: var(--one);
+}
+.mySignIn .myButton {
+    width: 15rem;
+    font-size: 15px;
+    border-radius: 50px;
+    border: .1rem solid var(--three);
+    background: var(--one);
+    color: var(--two);
+}
+.mySignIn .myButton:hover {
+    background: var(--three);
+    color: var(--one);
+}
+.myForm a {
+    color: var(--one);
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/*SignUp Section*/
+.my_signUp {
+    padding-top: 2rem;
+    background: var(--two);
+    width: 70rem;
+    height: 50vh;
+    margin: 50px 150px;
+    padding-left: 10rem;
+    text-align: center;
+    border-radius: 10px 55px 0 55px;
+    border: .2rem solid var(--one);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .4);
+}
+.mySignUp {
+    margin-top: 3rem;
+    padding: 20px;
+    width: 50rem;
+    background: var(--two);
+    border: .2rem solid var(--one);
+    text-align: center;
+    border-radius: 0 0 0 0;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .4);
+}
+.mySignUp input {
+    margin-top: 2rem;
+    border: .1rem solid var(--one);
+    width: 40rem;
+    height: 4rem;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .4);
+}
+.mySignUp .myButton {
+    width: 15rem;
+    font-size: 15px;
+    border-radius: 50px;
+    border: .1rem solid var(--seven);
+    background: var(--seven);
+    color: var(--two);
+}
+.mySignUp .myButton:hover {
+    background: var(--three);
+    color: var(--one);
+}
+.signUpText {
+    padding: 10px;
+    margin-top: 9rem;
+    text-align: justify;
+    width: 100rem;
+}
+.signUpText h3 {
+    font-family: var(--f2);
+    font-weight: 700;
+    color: var(--six);
+    font-size: 15px;
+    text-align: left;
+}
+.signUpText h3 {
+    font-family: var(--f6);
+    color: var(--six);
+    font-size: 10px;
+}
+/*Media Section*/
+/*Less than or equal to 1200px*/
+@media only screen and (max-width: 1200px) {
+    html {
+font-size: 55%;
+}
+
+/*Header Section*/
+header {
+    left: -120%;
+    width: 35rem;
+}
+
+#menuBars {
+    display: block;
+}
+
+header.toggle {
+    left: 0%;
+}
+
+/*Body Section*/
+section {
+    min-height: 90vh;
+}
+
+body {
+    padding: 0;
+}
+
+/*Home section*/
+/*About Section*/
+#about2 h1 {
+    margin-top: -60rem;
+}
+
+#about3 h1 {
+    margin-top: -120rem;
+}
+/*Profile Section*/
+/*Services Section*/
+/*Contact Section*/
+/*Sign In Section*/
+/*Sign Up Section*/
+}
+/*Less than or equal to 992px*/
+@media only screen and (max-width: 992px) {
+    /*Header Section*/
+    header {
+        left: -120%;
+        width: 35rem;
+    }
+
+    #menuBars {
+        display: block;
+    }
+
+    header.toggle {
+        left: 0%;
+    }
+    /*Body Section*/
+    section {
+        min-height: 90vh;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    .myLogoName {
+        font-size: 7rem;
+    }
+
+    /*About section*/
+    .aboutDiv1, .aboutDiv2, .aboutDiv3 {
+        min-height: 100%;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+    }
+
+    #about3 h1 {
+        margin-top: -45rem;
+        font-size: 20px;
+    }
+    /*Profile Section*/
+    /*Services Section*/
+    /*Contact Section*/      
+    /*Sign In Section*/
+    /*Sign Up Section*/
+}
+/*Less than or equal to 768px*/
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+
+    /*Header Section*/
+    #myLogo {
+        display: none;
+    }
+
+    .myLogoName {
+        font-size: 25px;
+        margin-top: 10rem;
+        margin-left: -1rem;
+    }
+    /*Body Section*/
+    section {
+        min-height: 90vh;
+    }
+    /*Home section*/
+
+    /*About Section*/
+    .myAbout1 {
+        margin-top: 2rem;
+    }
+
+    .About1_left h3 {
+        font-size: 15px;
+        margin-top: -5rem;
+    }
+
+    .myAbout1 {
+        gap: 10px;
+        grid-template-columns: 1fr;
+    }
+
+    .About1_left .myButton {
+        margin-top: 3rem;
+        margin-left: -1rem;
+        width: 15rem;
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .About1_left {
+        margin-right: 100px;
+        margin-left: -2rem;
+    }
+
+    .about1A {
+        width: 35rem;
+        height: 35rem;
+        margin-left: -1rem;
+    }
+
+    .my_image {
+        width: 30rem;
+        height: 25rem;
+    }
+
+    .aboutDiv1, .aboutDiv2, .aboutDiv3 {
+        grid-template-columns: 1fr;
+        margin-left: 15rem;
+    }
+
+    #about2 h1, #about3 h1 {
+        font-size: 25px;
+        margin-top: -5rem;
+    }
+
+    #about3 h1 {
+        font-size: 25px;
+        margin-top: -25rem;
+    }
+
+    .my_skills5 .myButton {
+        margin-top: 3rem;
+        width: 15rem;
+        padding: 10px;
+        font-size: 10px;
+        margin-left: -1rem;
+    }
+
+    .aboutDiv1, .aboutDiv2, .aboutDiv3 {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 1rem;
+    }
+
+    .mySkills1, .mySkills2, .mySkills3, .mySkills4 {
+        width: 55rem;
+        margin-top: -2.3rem;
+    }
+
+    .my_skills1 {
+        width: 50rem;
+    }
+
+    .my_skills2 {
+        width: 40rem;
+    }
+
+    .my_skills3 {
+        width: 30rem;
+    }
+
+    .my_skills4 {
+        width: 20rem;
+    }
+
+    .my_skills1 p, .my_skills2 p, .my_skills3 p, .my_skills4 p {
+        margin-left: 57rem;
+    }
+
+    .aboutDiv1 .div1, .aboutDiv1 .div2, .aboutDiv1 .div3 {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .aboutDiv2 .div1, .aboutDiv2 .div2, .aboutDiv2 .div3 {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .aboutDiv3 .div1, .aboutDiv3 .div2, .aboutDiv3 .div3 {
+        width: 12rem;
+        height: 12rem;
+    }
+    /*Profile Section*/
+    /*Services Section*/
+    /*Contact Section*/
+    .myContact {
+        grid-template-columns: 1fr;
+    }
+    .c_right .wrapper {
+        margin-left: 10rem;
+    }
+    /*Sign In Section*/
+    .my_signIn {
+        margin-top: 20rem;
+        margin-left: 1rem;
+        width: 75rem;
+        height: 55rem;
+    }
+    .mySignIn {
+        padding: 25px;
+        width: 55rem;
+    }
+    /*Sign Up Section*/
+}
+/*Less than or equal to 468px*/
+@media only screen and (max-width: 468px) {
+    /*Header Section*/
+    header {
+        left: 100vw;
+    }
+
+    .myInfo .myButton {
+        margin: 1rem;
+        font-size: 1rem;
+    }
+
+    #myLogo {
+        display: none;
+    }
+
+    .about1A {
+        width: 30rem;
+        height: 30rem;
+        margin-left: 1rem;
+    }
+
+    .my_image {
+        width: 25rem;
+        margin: auto;
+    }
+
+    /*Body Section*/
+    section {
+        min-height: 87vh;
+    }
+
+    .myLogoName {
+        margin-top: 8rem;
+        margin-left: 1rem;
+        margin-bottom: -13rem;
+        font-size: 20px;
+    }
+
+    /*Home Section*/
+    .myHome h1 {
+        margin: 0 0 1rem 0;
+    }
+    .myInfo h3 {
+        font-size: 18px;
+    }
+
+    .myInfo {
+        margin-top: 15rem;
+    }
+
+    .myIcon {
+        margin-top: 5rem;
+    }
+    /*About Section*/
+    .myAbout1 {
+        grid-template-columns: 1fr;
+    }
+    .walking_letter img {      
+        animation: forward 20s linear infinite;      
+    }
+    .About1Left {
+        grid-template-columns: 1fr;
+    }
+    .About1_left h3 {
+        margin-top: 5rem;
+        font-size: 15px;
+    }
+    .About1_left .myButton {
+        margin-top: 3rem;
+        margin-left: -1rem;
+        width: 15rem;
+        font-size: 10px;
+    }
+    .About1_left {
+        width: 35rem;
+    }
+    .l_left p, .l_right p {
+        font-size: 10px;
+    }
+    .aboutDiv1, .aboutDiv2, .aboutDiv3 {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 5rem;
+    }
+    .aboutDiv1 .div1,
+    .aboutDiv1 .div2,
+    .aboutDiv1 .div3 {
+        margin-top: 2rem;
+        width: 10rem;
+        height: 10rem;
+    }
+    .aboutDiv2 .div1,
+    .aboutDiv2 .div2,
+    .aboutDiv2 .div3 {
+        margin-top: 2rem;
+        width: 10rem;
+        height: 10rem;
+    }
+    .aboutDiv3 .div1,
+    .aboutDiv3 .div2,
+    .aboutDiv3 .div3 {
+        margin-top: 2rem;
+        width: 10rem;
+        height: 10rem;
+    }
+    .about1B {
+        height: 28rem;
+        padding: .5rem;
+    }
+    .my_image .myImage {
+        height: 26rem;
+    }
+    #about2 h1 {
+        margin-top: 2rem;
+        font-size: 20px;
+    }
+    #about2 .aboutDiv1,
+    #about2 .aboutDiv2,
+    #about2 .aboutDiv3 {
+        margin-left: 1rem;
+    }
+    #about3 h1 {
+        font-size: 20px;
+        margin-top: -25rem;
+    }
+    .about3 {
+        padding: 3rem;
+    }
+    .my_skills1, .my_skills2, .my_skills3, .my_skills4 {
+        width: 33rem;
+    }
+    .my_skills2 {
+        width: 30rem;
+    }
+    .my_skills3 {
+        width: 27rem;
+    }
+    .my_skills4 {
+        width: 24rem;
+    }
+    .my_skills5 p {
+        margin-top: -10rem;
+        font-size: 10px;
+    }
+    .my_skills5 .myButton {
+        margin-top: 3rem;
+        margin-left: -1rem;
+        width: 15rem;
+        font-size: 10px;
+    }
+    .mySkills1, .mySkills2, .mySkills3, .mySkills4 {
+        margin-top: -2.2rem;
+        width: 35rem;
+    }
+    .my_skills1 p, .my_skills2 p, .my_skills3 p, .my_skills4 p {
+        margin-left: 36rem;
+    }
+    .experience1 {
+        margin: 15rem 0 0 0;
+    }
+    .walkingExper {
+        margin: 15rem 0 0 0;
+    }
+    .exper_ience p {
+        font-size: 12px;
+    }
+    /*Web Design Section*/
+    .myWebDesign {
+        margin: 15rem 0 0 0;
+    }
+    .webDesign1,
+    .webDesign2,
+    .webDesign3 {
+        grid-template-columns: 1fr;
+        margin: 10rem; 0 0 0;
+    }
+    .webDesign1 .web_design1 {
+        border: .1rem solid var(--one);
+        width: 20rem;
+        height: 20rem;
+        background: var(--three);
+    }
+    .webDesign1 .web_design3 {
+        margin: 2rem 30rem 0 0;
+        width: 25rem;
+        height: 15rem;
+    }
+
+    .webDesign2 .web_design4 {
+        margin: -10rem 0 0 0;
+        width: 15rem;
+        height: 20rem;
+    }
+    .webDesign2 .web_design5 {
+        margin: 3rem 0 0 0;
+        width: 15rem;
+        height: 15rem;
+    }
+    .webDesign2 .web_design6 {
+        margin: 5rem 0 0 0 ;
+        width: 25rem;
+        height: 20rem;
+    }
+    .webDesign3 .web_design7 {
+        margin: 0 0 0 0;
+        height: 20rem;
+    }
+    .webDesign3 .web_design8 {
+        margin: 2rem 0 5rem 0;
+        width: 20rem;
+        height: 20rem;
+    }
+    /*My Responsive Design Section*/
+    .myResponsive {
+        margin-top: 15rem;
+    }
+    .myResponsive ul li:nth-child(odd) .my_responsive {
+        width: 15rem;
+        left: -140px;
+    }
+    .myResponsive ul li:nth-child(even) .my_responsive {
+        width: 15rem;
+        left: 25px;
+    }
+
+    /*My Graphic Design Section*/
+    .myGraphicDesign {
+        margin: 15rem 0 0 0;
+    }
+    .graphicDesign1,
+    .graphicDesign2,
+    .graphicDesign3 {
+        grid-template-columns: 1fr;
+    }
+
+    .graphicDesign1 .graphic_design1 {
+        width: 15rem;
+        height: 15rem;
+        margin: 0 0 1rem 10rem;
+    }
+
+    .graphicDesign1 .graphic_design2 {
+        width: 25rem;
+        height: 10rem;
+        margin: 0 0 1rem 5rem;
+    }
+    .graphicDesign1 .graphic_design3 {
+        margin: 0 0 1rem 5rem;
+        height: 10rem;
+        width: 25rem;
+    }
+    .graphicDesign2 .graphic_design4 {
+        margin: 0 0 0 10rem;
+        width: 15rem;
+        height: 15rem;
+    }
+    .graphicDesign2 .graphic_design5 {
+        margin: 2rem 0 0 10rem;
+        height: 15rem;
+    }
+    .graphicDesign2 .graphic_design6 {
+        margin: 2rem 0 0 10rem;
+        width: 20rem;
+        height: 15rem;
+    }
+    /*Resume Section*/
+    .my_resume {
+        margin: 15rem 0 0 0;
+    }
+    .resumeBody {
+        padding: 0;
+    }
+    .resume_body h1 {
+        text-align: justify;
+        font-size: 12px;
+    }
+    .resume_body p {
+        text-align: justify;
+    }
+    .resume_body ul li {
+        margin: 0 0 0 5rem;
+    }
+    .myExperience {
+        padding: 0;
+    }
+    .myExperience h1 {
+        text-align: justify;
+        font-size: 12px;
+    }
+    .myEducation {
+        padding: 0;
+    }
+    .my_education h1 {
+        text-align: justify;
+        font-size: 12px;
+    }
+    .myCertification {
+        padding: 0;
+    }
+    .my_certification h1 {
+        text-align: justify;
+        font-size: 12px;
+    }
+    /*Profile Section*/
+    /*Services Section*/
+    .myServices {
+    grid-template-columns: 1fr;
+    }
+    /*Contact Section*/
+    .myContact {
+        margin-top: 20rem;
+        grid-template-columns: 1fr;
+    }
+    .c_left {
+        width: 40rem;
+        margin-left: -1rem;
+    }
+    .c_form input {
+        width: 37rem;
+        margin-left: -2rem;
+    }
+    .c_form textarea {
+        width: 37rem;
+        margin-left: -2rem;
+    }
+    .c_left .myButton {
+        width: 15rem;
+        font-size: 10px;
+        margin-left: 0rem;
+    }
+    .c_right h1 {
+        margin-left: 1rem;
+    }
+    .contact_place,
+    .contact_phone,
+    .contact_email {
+        margin-left: 1rem;
+    }
+    .cRight .fa {
+        margin-left: -5rem;
+    }
+    .c_right .wrapper {
+        margin-left: 0rem;
+    }
+    .cRight2 {
+        width: 40rem;
+    }
+
+    /*Sign In Section*/
+    .my_signIn {
+        margin-top: 20rem;
+        margin-left: -3rem;
+        width: 43rem;
+        height: 38rem;
+    }
+    .mySignIn {
+        padding: 21px;
+        width: 39rem;
+        margin-left: -8rem;
+        text-align: center;
+    }
+    .myForm textarea {
+        width: 37rem;
+        height: 12rem;
+    }
+    .mySignIn .myAvatar {
+        width: 12rem;
+        height: 12rem;
+    }
+    .mySignIn .myButton {
+        width: 10rem;
+        font-size: 10px;
+    }
+
+    /*Sign Up Section*/
+    .my_signUp {
+        margin-top: 3rem;
+        margin-left: -3rem;
+        width: 43rem;
+        height: 45rem;
+    }
+    .mySignUp {
+        width: 39rem;
+        margin-left: -8rem;
+        text-align: center;
+    }
+    .mySignUp .myButton {
+        width: 10rem;
+        font-size: 10px;
+    }
+    .signUpText h3 {
+        margin-left: -2rem;
+        margin-top: 5rem;
+        font-family: var(--f6);
+        color: var(--six);
+        font-size: 10px;
+    }
+    .signUpText p {
+        margin-left: -2rem;
+        width: 40rem;
+    }
+}
+    
