@@ -1,0 +1,39 @@
+﻿@page
+@model Final_Project_in_Asp.net_MVC_2021.Pages.SignUpModel
+@{
+}
+
+<section>
+    <div id="menuBars" class="fas fa-bars"></div>
+    <a asp-page="/Index"><img id="myLogo" src="~/Images/myLogo3.jpg" alt="No Image" /></a>
+    <p class="myLogoName">MY SIGN UP</p>
+    <div class="signUpText">
+        <h3>Thank You for Signing Up!</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            dui mi, suscipit id sodales et, euismod dignissim est. Mauris ut
+            mi non augue facilisis tincidunt id aliquet turpis. Ut cursus porttitor
+            quam, sit amet pharetra augue mollis quis. Nulla quis nunc nunc.
+            Donec et nisi eget orci dictum molestie. Aliquam erat volutpat.
+            Quisque mattis leo vel quam imperdiet, et pellentesque dui aliquam.
+            Etiam imperdiet velit mi. Nullam egestas dictum metus, non.
+        </p>
+    </div>
+    
+    <div class="my_signUp">      
+        <div class="mySignUp">
+            <div class="myForm">
+                <form class="c_form" action="" method="post">
+                    <p style="color: red; font-weight: 900; font-size: 12px; text-align: center;">@Model.signUpError</p>
+                    <p style="color: seagreen; font-weight: 900; font-size: 12px; text-align: center;">@Model.logOutMessage</p>
+                    <p><input type="text" asp-for="user.fname" placeholder="First Name: " required></p>
+                    <p><input type="text" asp-for="user.lname" placeholder="Last Name: " required></p>
+                    <p><input type="email" asp-for="user.email" placeholder="Your Email: sample@yahoo.com " required></p>
+                    <p><input type="password" asp-for="user.password" placeholder="Your Password: ********** " required></p>
+                    <button type="submit" class="myButton">SEND</button>
+                </form>              
+                <a asp-page="/SignIn"><p>Already have an account? SIGN IN</p></a>
+            </div>
+        </div>
+    </div>
+</section>

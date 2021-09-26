@@ -1,0 +1,28 @@
+﻿@page
+@model Final_Project_in_Asp.net_MVC_2021.Pages.SignInModel
+@{
+}
+
+<section>
+    <div id="menuBars" class="fas fa-bars"></div>
+    <a asp-page="/Index"><img id="myLogo" src="~/Images/myLogo3.jpg" alt="No Image" /></a>
+    <p class="myLogoName">MY SIGN IN</p>
+
+    <div class="my_signIn">
+        <div class="mySignIn">
+            <img src="~/Images/myAvatar.jpg" alt="No Images" class="myAvatar">
+            <h3>Welcome to my page, @Model.fname</h3>
+            <p>Hope you enjoy to discover your interest.</p>
+            <div class="myForm">
+                <form class="c_form" action="" method="post">
+                    <p style="color: red; font-weight: 900; font-size: 15px; text-align: center;">@Model.signInError</p>
+                    <p style="color: red; font-weight: 900; font-size: 15px; text-align: center;">@Model.securityError</p>
+                    <p><input type="email" asp-for="user.email" placeholder="Your Email: sample@yahoo.com " required></p>
+                    <p><input type="password" asp-for="user.password" placeholder="Your Password: ******** " required></p>
+                    <button class="myButton" type="submit">SEND</button>
+                </form>              
+                <a asp-page="/SignUp"><p>Not a member? SIGN UP</p></a>
+            </div>
+        </div>
+    </div>
+</section>

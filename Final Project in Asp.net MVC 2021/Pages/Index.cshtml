@@ -1,0 +1,72 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<section class="myHome">
+    <div id="menuBars" class="fas fa-bars"></div>
+    <a><img id="myLogo" src="~/Images/myLogo3.jpg" alt="No Image" /></a>
+    <p class="myLogoName">MY HOME</p>
+
+    <div class="myInfo">
+        <h3 style="color: gray;">HELLO, My Name is <i style="color: #00A99D; ">JOHN.</i></h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dui mi, suscipit id sodales et,
+            euismod dignissim est. Mauris ut mi non augue facilisis tincidunt id aliquet turpis. Ut cursus
+            porttitor quam, sit amet pharetra augue mollis quis. Nulla quis nunc nunc. Donec et nisi
+            eget orci dictum molestie. Aliquam erat volutpat. Quisque mattis leo vel quam imperdiet,
+            et pellentesque dui aliquam. Etiam imperdiet velit mi. Nullam egestas dictum metus, non
+            ultrices tellus condimentum ut. Nulla facilisi. Cras id ornare ante. Phasellus at turpis quis
+            elit vestibulum tempor sit amet in leo.
+        </p>
+        <a asp-page="/Contact"><input class="myButton" value="HIRE ME" /></a>
+        <a asp-page="/Services"><input class="myButton" value="NEED A WEBSITE" /></a>
+    </div>
+    <h1>Check me here!</h1>
+    <div class="myIcon">
+        <div class="wrapper">
+            <div class="button">
+                <div class="my_icon">
+                    <a href="https://www.instagram.com/accounts/login/"><i class="fab fa-instagram"></i></a>
+                </div>
+                <span>Instagram</span>
+            </div>
+
+            <div class="button">
+                <div class="my_icon">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <span>Facebook</span>
+            </div>
+
+            <div class="button">
+                <div class="my_icon">
+                    <a href="https://twitter.com/login?lang=en"><i class="fab fa-twitter"></i></a>
+                </div>
+                <span>Twitter</span>
+            </div>
+
+            <div class="button">
+                <div class="my_icon">
+                    <a href="https://www.linkedin.com/home/?originalSubdomain=ca"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <span>LinkedIn</span>
+            </div>
+
+            <div class="button">
+                <div class="my_icon">
+                    <a href="https://accounts.google.com/servicelogin/signinchooser?service=youtube&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="fab fa-youtube"></i></a>
+                </div>
+                <span>YouTube</span>
+            </div>
+
+            <div class="button">
+                <div class="my_icon">
+                    <a href="https://github.com/"><i class="fab fa-github"></i></a>
+                </div>
+                <span>Github</span>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,64 @@
+﻿@page
+@model Final_Project_in_Asp.net_MVC_2021.Pages.ContactModel
+@{
+    ViewData["Tittle"] = "Contact page";
+}
+
+<section>
+    <div id="menuBars" class="fas fa-bars"></div>
+    <a asp-page="/Index"><img id="myLogo" src="~/Images/myLogo3.jpg" alt="No Image" /></a>
+    <p class="myLogoName">MY CONTACT</p>
+    
+    <div class="myContact">
+        <div class="c_left">
+            <form class="c_form" action="" method="post">
+                <p><input type="text" asp-for="contact.fullname"  placeholder="Full Name: " required></p>
+                <p><input type="email" asp-for="contact.email"  placeholder="Your Email: sample@yahoo.com " required></p>
+                <p><input type="text" asp-for="contact.subject"  placeholder="Subject" required></p>
+                <p><textarea type="message" asp-for="contact.message"  placeholder="Your Message ... ... ..."></textarea></p>
+                <button class="myButton">SEND</button>
+                @*<p>@ViewData["Message"]</p>*@
+</form>
+        </div>
+        <div class="c_right">
+            <h1>Please Contact Me!</h1>
+            <div class="cRight">
+                <p><i class="fa fa-map-marker fa-2x"><span class="contact_place"> Toronto, Ontario, Canada</span></i></p>
+                <p><i class="fa fa-phone fa-2x"><span class="contact_phone"> (647) 389-0568</span></i></p>
+                <p><i class="fa fa-envelope fa-2x"><span class="contact_email"> test.johnaliah0529@gmail.com</span></i></p>
+            </div>
+
+            <div class="wrapper">
+                <div class="button">
+                    <div class="my_icon">
+                        <a href="https://www.instagram.com/accounts/login/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <span>Instagram</span>
+                </div>
+
+                <div class="button">
+                    <div class="my_icon">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <span>Facebook</span>
+                </div>
+                <div class="button">
+                    <div class="my_icon">
+                        <a href="https://www.linkedin.com/home/?originalSubdomain=ca"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <span>LinkedIn</span>
+                </div>
+                <div class="button">
+                    <div class="my_icon">
+                        <a href="https://github.com/"><i class="fab fa-github"></i></a>
+                    </div>
+                    <span>Github</span>
+                </div>
+            </div>
+            <div class="cRight2">
+                <hr />
+                <p>Thank You <strong style="font-family: 'Satisfy'; color: green; "> @Model.fullname</strong> for Contacting Us, Blessing!</p>
+            </div>
+        </div>
+    </div>
+</section>
